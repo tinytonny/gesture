@@ -17,10 +17,11 @@ var myGesture = {
     },
 
     //初始化函数
-    init: function () {
+    init: function (ele) {
         var self = this;
-        document.addEventListener("touchstart", self.fnStart ,true);
-        document.addEventListener("touchend", self.fnEnd ,true);
+        ele = ele || document;
+        ele.addEventListener("touchstart", self.fnStart ,true);
+        ele.addEventListener("touchend", self.fnEnd ,true);
     },
 
     //获取手势运动方向 1：向左和向上运动 2：向右和向下运动
